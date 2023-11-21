@@ -1,38 +1,482 @@
-.App {
+:root{
+  --primary-color: #916DB3;
+  --secondary-color: #E48586;
+  --tertiary-color: #FCBAAD;
+  --light-color: #FDE5EC;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
+/* =========== Buttons ================= */
+
+.btn-primary {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  width: fit-content;
+  cursor: pointer;
+}
+
+/* ============== utils ===================== */
+
+.d-flex {
+  display: flex;
+}
+
+.align-center {
+  align-items: center;
+}
+
+
+/* =========== Margins ================ */
+
+.mt-50 {
+  margin-top: 50px;
+}
+
+.mb-50 {
+  margin-bottom: 50px;
+}
+
+.ml-20 {
+  margin-left: 20px;
+}
+
+/* =========== Hero ================= */
+
+.hero {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+
+.hero-div {
+  height: 100%;
+  width: 48%;
+  position: relative;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hero-text-btns {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.contact-us-btn {
+  margin-left: 30px;
+}
+
+.hero-img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 50%;
+  transform: translateX(50%) translateY(-50%);
+}
+
+.hero-img-tag {
+  height: 18rem;
+}
+
+.header {
+  height: 4rem;
+  position: fixed;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  z-index: 100;
+  display: flex;
+  /* background-color: var(--primary-color); */
+  /* opacity: 50%; */
+}
+
+.header-background {
+  position: absolute;
+  top: 0px;
+  background-color: var(--primary-color);
+  opacity: 90%;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  transition: background-color 2s;
+}
+
+.header-elements {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0px auto;
+  /* color: white; */
+  height: 100%;
+  z-index: 1;
+}
+
+.header-element{
+  height: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  z-index: 10001;
+}
+
+.header-elements .active{
+  border-bottom: 2px solid;
+  font-weight: 700;
+}
+
+
+
+
+
+
+
+/* ======================================================================= */
+
+.features {
+  width: 100%;
+  background-color: var(--light-color);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  border-radius: 20px;
+  position: relative;
+}
+
+.features-heading {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.features-content {
+  display: flex;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  justify-content: space-between;
+}
+
+.features-content-item:first-child {
+  width: 48%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.features-content-item {
+  width: 48%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.features-content-item li:not(last-child){
+  margin-bottom: 25px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.features-content-item > img {
+  height: 25rem;
+}
+
+
+/* ================================================ */
+
+.property-list {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.property-list::after {
+    content: "";
+    flex: auto;
+}
+
+.card {
+  border: 1px solid;
+  border-radius: 20px;
+  width: fit-content;
+  margin: 15px;
+  cursor: pointer;
+}
+
+.card-img {
+  background: url('https://photos.zillowstatic.com/fp/8d305b7aff5e09dc0cffb360390189cb-cc_ft_768.webp') center no-repeat;
+  height: 15rem;
+  width: 19rem;
+  background-size: cover;
+  border-radius: 20px 20px 0px 0px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.card-content {
+  padding: 0px 20px 5px 20px;
+}
+
+.card-sub-content {
+  display: flex;
+}
+
+.card-sub-content-style {
+  background-color: var(--secondary-color);
   color: white;
+  padding: 5px 10px;
+  border-radius: 15px;
 }
 
-.App-link {
-  color: #61dafb;
+.card-sub-content-style:not(last-child) {
+  margin-right: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+/* ============================================= */
+
+.details {
+  padding-top: 120px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.details-img {
+  height: 30rem;
+  width: 100%;
+  background-size: cover;
+  border-radius: 5px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.details-content {
+  width: fit-content;
+}
+
+.included-icon {
+  font-size: 30px;
+  margin-right: 15px;
+}
+
+.included-items > div {
+  min-width: 4rem;
+  padding: 10px 0px;
+  width: 20rem;
+}
+
+.included-items {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+
+/* ======================================= */
+
+.contact {
+  height: 100vh;
+  position: relative;
+}
+
+.contact-div {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  justify-content: space-around;
+  align-items: center;
+}
+
+.contact-div-1 {
+  width: 48%;
+}
+
+.contact-div-2 {
+  width: fit-content;
+}
+
+.contact-div img {
+  height: 30rem;
+  border-radius: 40%;
+  margin: 0px auto;
+}
+
+/* ======================================== */
+
+.footer {
+  position: absolute;
+  height: 10rem;
+  width: 100%;
+  left: 0px;
+  background-color: var(--primary-color);
+  display: flex;
+  color: white;
+  align-items: center;
+}
+
+.footer img {
+  height: 7rem;
+  padding: 20px;
+  padding-left: 40px;
+  cursor: pointer;
+}
+
+/* .footer div {
+  min-width: 5rem;
+  width: 100%;
+  margin-left: 10rem;
+  
+} */
+
+.footer-items {
+  display: flex;
+  width: 100%;
+  justify-content: end;
+}
+
+.footer-items div {
+  width: 20%;
+}
+
+
+/* ============================================ */
+
+.ContactBanner {
+  padding: 30px;
+  background: rgb(145,109,179);
+  background: linear-gradient(135deg, rgba(145,109,179,1) 0%, rgba(252,186,173,1) 45%, rgba(253,229,236,1) 100%);
+  color: white;
+  border-radius: 20px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.ContactBanner-div {
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+
+/* =================================================== */
+
+/* @media only screen and (max-width: 1300px) {
+  .hero-img-tag{
+    height: 15rem;
   }
-  to {
-    transform: rotate(360deg);
+} */
+
+@media only screen and (max-width: 1200px) {
+  .hero-img-tag{
+    height: 15rem;
   }
+
+  .features-content-item > img {
+    position: absolute;
+    height: 23rem;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0px;
+  }
+
+  .contact-div img {
+    height: 25rem;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .hero-img-tag{
+    height: 15rem;
+  }
+
+  .features-content {
+    display: block;
+  }
+
+  .features-content-item > img {
+    height: 15rem;
+    display: block;
+    position: relative;
+    transform: none;
+    width: 100%;
+    margin: 0px auto;
+  } 
+
+  .features-content-item{
+    width: 100%;
+  }
+
+  .features-content-item:first-child{
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .header-elements {
+    width: 70%;
+  }
+
+  .header-element {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .hero-img-tag{
+    height: 10rem;
+  }
+
+  .features-content-item ul{
+    padding-left: 0px;
+    text-align: justify;
+  }
+
+  .testimonals-tag {
+    width: 100% !important;
+    font-size: 1.5rem !important;
+  }
+
+  .hero {
+    display: block;
+    padding-top: 27vh
+  }
+
+  .hero-div {
+    width: 100%;
+    height: 15vh;
+  }
+
+  .hero-img {
+    top: auto;
+  }
+
+  .hero-text {
+    top: auto;
+    transform: none;
+  }
+
+}
+
+@media only screen and (max-width: 600px) {
+  body{
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .footer-items {
+    flex-direction: column;
+    align-items: end;
+  }
+
+  .footer-items div {
+    width: 60%;
+  }
+
 }
